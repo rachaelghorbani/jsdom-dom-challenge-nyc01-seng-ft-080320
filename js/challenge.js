@@ -1,24 +1,13 @@
 
-
+let countup = setInterval(myTimer, 1000);
 const counter = document.querySelector('#counter')
-function startCountup(){
-    if (paused === false) {
-        let countup = setInterval(myTimer, 1000);
-        return countup;
-    }
-    else {
-        let countPause = clearInterval (myTimer, 1000)
-        paused = true;
-        return countPause
-    }
-}
 
-let paused 
+
 function myTimer(){
-        let seconds = parseInt(counter.innerText)
-        seconds++
-        counter.innerText = seconds
     
+    let seconds = parseInt(counter.innerText)
+    seconds++
+    counter.innerText = seconds
 }
 
 
@@ -55,7 +44,7 @@ function myTimer(){
                     // countup;
                 } else if (e.target.innerText === 'resume'){
                     e.target.innerText = 'pause'  
-                   
+                    countup = setInterval(myTimer, 1000)
                 }
               
             // As a user, I can pause the counter, which should 
