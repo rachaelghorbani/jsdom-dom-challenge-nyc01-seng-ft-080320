@@ -40,11 +40,20 @@ function myTimer(){
         } else if(e.target.id === 'pause'){
                 if(e.target.innerText === 'pause'){
                     e.target.innerText = 'resume'
+                    document.querySelector('#minus').disabled = true
+                    document.querySelector('#plus').disabled = true
+                    document.querySelector('#heart').disabled = true
+                    document.querySelector('#submit').disabled = true
+
                     clearInterval(countup)
                     // countup;
                 } else if (e.target.innerText === 'resume'){
                     e.target.innerText = 'pause'  
                     countup = setInterval(myTimer, 1000)
+                    document.querySelector('#minus').disabled = false
+                    document.querySelector('#plus').disabled = false
+                    document.querySelector('#heart').disabled = false
+                    document.querySelector('#submit').disabled = false
                 }
               
             // As a user, I can pause the counter, which should 
